@@ -11,9 +11,9 @@ http://code-sharing.azurewebsites.net/
 /api/code/{id}  
 /api/code/latest  
 
-/code/new  \n
-/code/{id}  \n
-/code/latest  \n
+/code/new  
+/code/{id}  
+/code/latest  
 
 ### Need improvement:
  - Expired codes aren't deleted from database.
