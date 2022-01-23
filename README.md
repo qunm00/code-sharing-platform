@@ -7,13 +7,13 @@
 http://code-sharing.azurewebsites.net/
 
 ### Routes:
-/api/code/new\n
-/api/code/{id}\n
-/api/code/latest\n
+/api/code/new  \n
+/api/code/{id}  \n
+/api/code/latest  \n
 
-/code/new
-/code/{id}
-/code/latest
+/code/new  \n
+/code/{id}  \n
+/code/latest  \n
 
 ### Need improvement:
  - Expired codes aren't deleted from database.
