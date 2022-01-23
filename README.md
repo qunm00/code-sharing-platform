@@ -7,11 +7,14 @@
 http://code-sharing.azurewebsites.net/
 
 ### Code snippet:
+<pre>
 {
     "code": "class Code { ...",
     "time": 0,
     "views": 0
 }
+
+</pre>
 
 ### Routes:
 <pre>
