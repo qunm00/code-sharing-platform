@@ -32,7 +32,7 @@ public class CodeController {
     }
 
     @GetMapping("/api/code/{id}")
-    public ResponseEntity<Object> getCode(@PathVariable UUID id) {
+    public ResponseEntity<Object> getCode(@PathVariable String id) {
         Code code = this.codeService.findById(id);
         return new ResponseEntity<>(
                 code,
@@ -50,7 +50,14 @@ public class CodeController {
     }
 
     @GetMapping("/code/{id}")
-    public String getWebCode(Model model, @PathVariable UUID id) {
+    public String getWebCode(Model model, @PathVariable String id) {
+//        try {
+//            UUID uuid = UUID.fromString(id);
+//        } catch (Error error) {
+//            System.out.println("hello");
+//        }
+        System.out.println(id);
+//        Code code = this.codeService.findById(UUID.randomUUID());
         Code code = this.codeService.findById(id);
         model.addAttribute("snippet",
                 Map.of("code", code.getCode(),
@@ -71,6 +78,7 @@ public class CodeController {
 
     @GetMapping("/code/latest")
     public String latestWebCode(Model model) {
+        System.out.println("/code/latest");
         List<Code> listCode = this.codeService.findLatest10();
         List<Map<String, Object>> listStringString = new ArrayList<>();
         for (Code code: listCode) {

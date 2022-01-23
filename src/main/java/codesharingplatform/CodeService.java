@@ -17,7 +17,9 @@ public class CodeService {
         this.codeRepository.save(code);
     }
 
-    public Code findById(UUID id) {
+    public Code findById(String id) {
+        System.out.println("findById");
+        System.out.println(id);
         if (this.codeRepository.existsById(id)) {
             this.updateViews(id);
             Code code = this.codeRepository.findById(id).get();
@@ -34,13 +36,13 @@ public class CodeService {
 
     public List<Code> findLatest10() {
         List<Code> listCode = this.codeRepository.findLatest10();
-        for (Code code: listCode) {
+        listCode.forEach(code -> {
             this.updateViews(code.getId());
-        }
+        });
         return listCode;
     }
 
-    public void updateViews(UUID uuid) {
+    public void updateViews(String uuid) {
         this.codeRepository.updateViews(uuid);
     }
 

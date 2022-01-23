@@ -12,7 +12,7 @@ import java.util.UUID;
 class Code {
     @Id
     @JsonIgnore
-    private UUID id = UUID.randomUUID();
+    private String id = UUID.randomUUID().toString();
     private String code;
     private LocalDateTime date;
     private LocalDateTime time;
@@ -33,11 +33,11 @@ class Code {
         this.viewsExpirable = views > 0;
     }
 
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 

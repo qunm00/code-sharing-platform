@@ -11,11 +11,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface CodeRepository extends CrudRepository<Code, UUID> {
+public interface CodeRepository extends CrudRepository<Code, String> {
     @Override
     @Query(value = "select * from code " +
             "where id = ?1 ", nativeQuery = true)
-    Optional<Code> findById(UUID id);
+    Optional<Code> findById(String id);
 
     @Query(value = "select * from code " +
             "where time_expirable = false and views_expirable = false " +
@@ -28,5 +28,5 @@ public interface CodeRepository extends CrudRepository<Code, UUID> {
     @Query(value = "update code " +
             "set views = views - 1 " +
             "where id = ?1 and views_expirable = true and views >= 0", nativeQuery = true)
-    void updateViews(UUID id);
+    void updateViews(String id);
 }
