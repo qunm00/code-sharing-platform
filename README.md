@@ -1,6 +1,6 @@
 # code-sharing-platform
 
-## Project Description:
+### Project Description:
 [Hyperskill - Code Sharing Platform](https://hyperskill.org/projects/130?track=12)
 
 ### Cloud Deployment:
