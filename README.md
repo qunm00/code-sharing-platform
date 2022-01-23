@@ -7,9 +7,9 @@
 http://code-sharing.azurewebsites.net/
 
 ### Routes:
-/api/code/new  \n
-/api/code/{id}  \n
-/api/code/latest  \n
+/api/code/new  
+/api/code/{id}  
+/api/code/latest  
 
 /code/new  \n
 /code/{id}  \n
