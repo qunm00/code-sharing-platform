@@ -6,6 +6,13 @@
 ### Cloud Deployment:
 http://code-sharing.azurewebsites.net/
 
+### Code snippet:
+{
+    "code": "class Code { ...",
+    "time": 0,
+    "views": 0
+}
+
 ### Routes:
 <pre>
 /code/new  
