@@ -9,23 +9,6 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-azurewebapp {
-	subscription = '98aaeb6d-38ab-48e8-a736-b636f36a493c'
-	resourceGroup = 'nmiquan'
-	appName = 'code-sharing'
-	pricingTier = 'F1'
-	region='centralus'
-	runtime {
-		os = 'Linux'
-		webContainer = 'Java SE'
-		javaVersion = ' Java 11'
-	}
-}
-
-//auth {
-//	type = 'azure_cli'
-//}
-
 repositories {
 	mavenCentral()
 }

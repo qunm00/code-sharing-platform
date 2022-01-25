@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+
 
 @Controller
 public class CodeController {
@@ -19,7 +19,8 @@ public class CodeController {
 
     @PostMapping("/api/code/new")
     public ResponseEntity<Object> newCode(@RequestBody Map<String, Object> snippet) {
-        Code newCode = new Code(String.valueOf(snippet.get("code")),
+        Code newCode = new Code(
+                String.valueOf(snippet.get("code")),
                 Long.parseLong(String.valueOf(snippet.get("time"))),
                 Long.parseLong(String.valueOf(snippet.get("views")))
         );
@@ -34,6 +35,7 @@ public class CodeController {
     @GetMapping("/api/code/{id}")
     public ResponseEntity<Object> getCode(@PathVariable String id) {
         Code code = this.codeService.findById(id);
+
         return new ResponseEntity<>(
                 code,
                 HttpStatus.OK
@@ -43,6 +45,7 @@ public class CodeController {
     @GetMapping("/api/code/latest")
     public ResponseEntity<Object> latestCode() {
         List<Code> listCode = this.codeService.findLatest10();
+
         return new ResponseEntity<>(
                 listCode,
                 HttpStatus.OK
@@ -51,13 +54,6 @@ public class CodeController {
 
     @GetMapping("/code/{id}")
     public String getWebCode(Model model, @PathVariable String id) {
-//        try {
-//            UUID uuid = UUID.fromString(id);
-//        } catch (Error error) {
-//            System.out.println("hello");
-//        }
-        System.out.println(id);
-//        Code code = this.codeService.findById(UUID.randomUUID());
         Code code = this.codeService.findById(id);
         model.addAttribute("snippet",
                 Map.of("code", code.getCode(),
@@ -78,7 +74,6 @@ public class CodeController {
 
     @GetMapping("/code/latest")
     public String latestWebCode(Model model) {
-        System.out.println("/code/latest");
         List<Code> listCode = this.codeService.findLatest10();
         List<Map<String, Object>> listStringString = new ArrayList<>();
         for (Code code: listCode) {

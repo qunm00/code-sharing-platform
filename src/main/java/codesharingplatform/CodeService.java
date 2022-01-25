@@ -18,8 +18,6 @@ public class CodeService {
     }
 
     public Code findById(String id) {
-        System.out.println("findById");
-        System.out.println(id);
         if (this.codeRepository.existsById(id)) {
             this.updateViews(id);
             Code code = this.codeRepository.findById(id).get();
