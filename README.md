@@ -4,7 +4,7 @@
 [Hyperskill - Code Sharing Platform](https://hyperskill.org/projects/130?track=12)
 
 ### Cloud Deployment:
-http://code-sharing.azurewebsites.net/
+https://code-sharing.azurewebsites.net/
 
 ### Code snippet:
 <pre>
